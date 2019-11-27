@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SpartaDBModelStoreContainer" CdmEntityContainer="SpartaDBEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="SpartaDBModel.Client">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="SpartaDBModel.Job">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="SpartanID" ColumnName="SpartanID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spartans">
+      <EntityTypeMapping TypeName="SpartaDBModel.Spartan">
+        <MappingFragment StoreEntitySet="Spartans">
+          <ScalarProperty Name="SpartanID" ColumnName="SpartanID" />
+          <ScalarProperty Name="SpartanName" ColumnName="SpartanName" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="IsPlaced" ColumnName="IsPlaced" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

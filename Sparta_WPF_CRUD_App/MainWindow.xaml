@@ -1,0 +1,46 @@
+﻿<Window x:Class="Sparta_WPF_CRUD_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sparta_WPF_CRUD_App"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="Auto" Width="Auto">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" Content="Sparta DataRecords" FontSize="25" FontWeight="Bold" Background="#6EF5C8"
+               HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        <Label x:Name="Spartans" Grid.Row="1" Grid.Column="1" Content="Spartans" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ListView x:Name="ListViewSpartans" Grid.Row="2" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Background="LightBlue" 
+                  SelectionChanged="ListViewSpartans_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Job Title" DisplayMemberBinding="{Binding Path=SpartanName}"/>
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding Path=Course}"/>
+                    <GridViewColumn Header="IsPlaced?" DisplayMemberBinding="{Binding Path=IsPlaced}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</Window>
