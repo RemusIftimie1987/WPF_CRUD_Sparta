@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sparta_WPF_CRUD_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="Auto" Width="Auto">
+        Title="MainWindow" Height="Auto" Width="Auto" Background="#C3FFB6">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -20,27 +20,56 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" Content="Sparta DataRecords" FontSize="25" FontWeight="Bold" Background="#6EF5C8"
+        <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" Content="Sparta Data Records" FontSize="25" FontWeight="Bold" Background="#6EF5C8"
                HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
         <Label x:Name="Spartans" Grid.Row="1" Grid.Column="1" Content="Spartans" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <ListView x:Name="ListViewSpartans" Grid.Row="2" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" Background="LightBlue" 
+        <ListView x:Name="ListViewSpartans" Grid.Row="2" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="3" Background="LightBlue" 
                   SelectionChanged="ListViewSpartans_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Job Title" DisplayMemberBinding="{Binding Path=SpartanName}"/>
-                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding Path=Course}"/>
+                    <GridViewColumn Header="SpartanID" DisplayMemberBinding="{Binding Path=SpartanID}"/>
+                    <GridViewColumn Header="JobTitle" DisplayMemberBinding="{Binding Path=SpartanName}"/>
+                    <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding Path=Course}"/>
                     <GridViewColumn Header="IsPlaced?" DisplayMemberBinding="{Binding Path=IsPlaced}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-
+        <TextBox x:Name="TextBoxId" Grid.Row="2" Grid.Column="7" IsReadOnly="True" Background="#C3FFB6" 
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxName" Grid.Row="3" Grid.Column="7" IsReadOnly="True" Background="#C3FFB6"
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="TextBoxCourse" Grid.Row="4" Grid.Column="7" IsReadOnly="True" Background="#C3FFB6" 
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="TextBoxIsPlaced" Grid.Row="5" Grid.Column="7" IsReadOnly="True" Background="#C3FFB6" 
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="ID" Content="ID:" Grid.Row="2" Grid.Column="6" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="Name" Content="Name:" Grid.Row="3" Grid.Column="6" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="Course" Content="Course:" Grid.Row="4" Grid.Column="6" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="IsPlaced" Content="IsPlaced:" Grid.Row="5" Grid.Column="6" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="ButtonEdit" Content="Update" IsEnabled="false"
+        Grid.Row="1" Grid.Column="7" Background="#DADBFD" Click="ButtonEdit_Click"/>
+        <Button x:Name="ButtonAdd" Content="Add" IsEnabled="true"
+        Grid.Row="1" Grid.Column="6" Background="#DADBFD" Click="ButtonAdd_Click"/>
+        <Button x:Name="ButtonDelete" Content="Delete" IsEnabled="false"
+        Grid.Row="1" Grid.Column="8" Background="#DADBFD" Click="ButtonDelete_Click"/>
+        <ListView x:Name="ListViewQueries" Grid.Column="3" Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="3" Margin="66.4,101.2,67.2,-0.4" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=CompanyName}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=JobTitle}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="ButtonViewClients" Content="View Clients" IsEnabled="True"
+                Grid.Row="2" Grid.Column="3" Background="#6EF5C8" Click="ButtonClients_Click" Margin="0.4,52.2,57.4,0.4" Grid.ColumnSpan="2"/>
+        <Button x:Name="ButtonViewJobs" Content="Available Jobs" IsEnabled="True"
+                Grid.Row="2" Grid.Column="4" Background="#6EF5C8" Click="ButtonJobs_Click" Margin="58.4,52.2,0.2,0.4" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

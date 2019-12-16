@@ -59,5 +59,5 @@ INSERT INTO Jobs Values ('Web developer', 'London', 2, 2)
 INSERT INTO Jobs Values ('Software Tester', 'Glasgow', 3, 3)
 INSERT INTO Jobs Values ('Business analyst', 'Dublin', 4, 4)
 
-select * from Jobs
+select * from Spartans
 
